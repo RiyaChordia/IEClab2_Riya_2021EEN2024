@@ -1,0 +1,16 @@
+# Cadence Genus(TM) Synthesis Solution, Version 19.12-s121_1, built Dec  3 2019 15:07:17
+
+# Date: Tue Feb 01 15:44:01 2022
+# Host: legendre1 (x86_64 w/Linux 4.9.0-4-amd64) (1core*18cpus*1physical cpu*Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz 20480KB)
+# OS:   Unsupported OS as /etc does not have release info
+
+source ./synthesis/fifo.tcl
+check_design
+check_timing
+gui_show
+check_timing_intent
+report_timing_summary
+write_sdf
+write_sdf -timescale ns -nonegchecks -recrem split -edges check_edge -setuphold split > delays.sdf
+gui_hide
+exit
